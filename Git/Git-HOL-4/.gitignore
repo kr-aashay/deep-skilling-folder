@@ -1,0 +1,2 @@
+# Ignore merge tool backup files (created by git mergetool)
+*.orig

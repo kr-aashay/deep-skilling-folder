@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<greeting>
+    <!-- This is the RESOLVED version after merging master and GitWork -->
+    <message>Hello from both Master and GitWork branches - merged!</message>
+    <author>Master Developer</author>
+</greeting>
