@@ -1,0 +1,2 @@
+Welcome to GitDemo repository!
+This file was created as part of Git HOL-1.
