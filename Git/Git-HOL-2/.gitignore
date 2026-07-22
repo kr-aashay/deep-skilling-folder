@@ -1,0 +1,5 @@
+# Ignore all .log files anywhere in the project
+*.log
+
+# Ignore the entire logs folder
+logs/
