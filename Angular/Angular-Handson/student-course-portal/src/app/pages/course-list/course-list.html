@@ -1,0 +1,40 @@
+<div class="course-list-container">
+  <h2>Courses</h2>
+
+  <!-- Search bar — Hands-On 7: updates URL query param -->
+  <div class="search-bar">
+    <input type="text" [(ngModel)]="searchTerm" placeholder="Search courses..." (keyup.enter)="onSearch()" />
+    <button (click)="onSearch()">Search</button>
+  </div>
+
+  <!-- Hands-On 3: *ngIf — loading state -->
+  <div *ngIf="isLoading$ | async" class="loading">
+    <p>Loading courses...</p>
+  </div>
+
+  <!-- Hands-On 3: Error state -->
+  <div *ngIf="error$ | async as error" class="error-msg">{{ error }}</div>
+
+  <!-- Hands-On 3: Course grid — *ngFor with trackBy -->
+  <div *ngIf="!(isLoading$ | async)" class="course-grid">
+    <ng-container *ngIf="(courses$ | async) as courses">
+
+      <!-- Hands-On 3: *ngIf with else — empty state -->
+      <ng-container *ngIf="courses.length > 0; else noCourses">
+        <div *ngFor="let course of courses; trackBy: trackByCourseId" (click)="onCardClick(course)" class="card-wrapper">
+          <!-- trackBy: returns course.id so Angular only re-renders items whose id changed -->
+          <app-course-card [course]="course" (enrollRequested)="onEnroll($event)"></app-course-card>
+        </div>
+      </ng-container>
+
+      <!-- else block — never added to DOM when condition is true (unlike display:none) -->
+      <ng-template #noCourses>
+        <p class="no-courses">No courses available.</p>
+      </ng-template>
+
+    </ng-container>
+  </div>
+
+  <!-- Selected course ID display -->
+  <p *ngIf="selectedCourseId" class="selected-info">Selected course ID: {{ selectedCourseId }}</p>
+</div>

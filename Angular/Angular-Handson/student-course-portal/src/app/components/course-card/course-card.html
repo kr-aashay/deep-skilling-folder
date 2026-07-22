@@ -1,0 +1,32 @@
+<!-- Hands-On 3: Custom directive appHighlight — hover to see yellow background -->
+<div class="course-card" 
+     [ngClass]="cardClasses" 
+     [ngStyle]="{ 'border-left': '4px solid ' + borderColor }"
+     appHighlight>
+  
+  <h3>{{ course.name }}</h3>
+  <p class="course-code">{{ course.code }}</p>
+  <p class="course-credits">{{ course.credits | creditLabel }}</p>
+
+  <!-- Hands-On 3: *ngSwitch for grade status badge -->
+  <div [ngSwitch]="course.gradeStatus" class="status-badge">
+    <span *ngSwitchCase="'passed'" class="badge badge--passed">Passed</span>
+    <span *ngSwitchCase="'failed'" class="badge badge--failed">Failed</span>
+    <span *ngSwitchCase="'pending'" class="badge badge--pending">Pending</span>
+  </div>
+
+  <!-- Hands-On 3: Toggle button -->
+  <button (click)="toggleExpand()" class="btn-secondary">
+    {{ isExpanded ? 'Hide Details' : 'Show Details' }}
+  </button>
+
+  <!-- Hands-On 3: Expanded content -->
+  <div *ngIf="isExpanded" class="expanded-content">
+    <p>Additional course information can be displayed here when expanded.</p>
+  </div>
+
+  <!-- Enroll/Unenroll button -->
+  <button (click)="onEnroll()" class="btn-enroll">
+    {{ enrollmentService.isEnrolled(course.id) ? 'Unenroll' : 'Enroll' }}
+  </button>
+</div>

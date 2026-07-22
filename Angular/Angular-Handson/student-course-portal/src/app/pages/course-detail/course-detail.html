@@ -1,0 +1,20 @@
+<div class="detail-container">
+  <a routerLink="/courses" class="back-link">← Back to Courses</a>
+
+  <div *ngIf="course; else notFound">
+    <h2>{{ course.name }}</h2>
+    <p><strong>Code:</strong> {{ course.code }}</p>
+    <p><strong>Credits:</strong> {{ course.credits | creditLabel }}</p>
+    <p><strong>Grade Status:</strong>
+      <span [ngClass]="{
+        'status-passed':  course.gradeStatus === 'passed',
+        'status-failed':  course.gradeStatus === 'failed',
+        'status-pending': course.gradeStatus === 'pending'
+      }">{{ course.gradeStatus | uppercase }}</span>
+    </p>
+  </div>
+
+  <ng-template #notFound>
+    <p class="error">{{ errorMessage }}</p>
+  </ng-template>
+</div>

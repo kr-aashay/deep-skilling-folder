@@ -1,0 +1,34 @@
+<div class="home-container">
+  <!-- Hands-On 2: String interpolation with portalName property -->
+  <h2>{{ portalName }}</h2>
+  <p>Welcome to the Student Course Portal. Browse courses, manage your enrollment, and track your academic progress all in one place.</p>
+
+  <!-- Stats row with live data from CourseService (Hands-On 6) -->
+  <div class="stats-row">
+    <div class="stat-card">
+      <span class="stat-value">{{ coursesAvailable }}</span>
+      <span class="stat-label">Courses Available</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-value">3</span>
+      <span class="stat-label">Enrolled</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-value">3.8</span>
+      <span class="stat-label">GPA</span>
+    </div>
+  </div>
+
+  <!-- Hands-On 2: Property binding — disabled state -->
+  <button [disabled]="!isPortalActive" (click)="onEnrollClick()" class="enroll-btn">Enroll Now</button>
+
+  <!-- Hands-On 2: Message shown after click -->
+  <p *ngIf="message" class="message">{{ message }}</p>
+
+  <!-- Hands-On 2: Two-way binding with ngModel -->
+  <div class="search-box">
+    <input type="text" [(ngModel)]="searchTerm" placeholder="Search courses..." />
+    <!-- [property] is one-way (component → DOM); [(ngModel)] is two-way (DOM ↔ component) -->
+    <p>Searching for: {{ searchTerm }}</p>
+  </div>
+</div>

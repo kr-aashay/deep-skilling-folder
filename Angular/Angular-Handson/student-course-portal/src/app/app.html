@@ -1,0 +1,12 @@
+<!-- Header navigation — always visible -->
+<app-header></app-header>
+
+<!-- Hands-On 8: Global loading spinner — shown during any HTTP call -->
+<div *ngIf="isLoading$ | async" class="global-spinner">
+  <span>Loading...</span>
+</div>
+
+<!-- Router outlet renders the matched page component -->
+<main>
+  <router-outlet></router-outlet>
+</main>

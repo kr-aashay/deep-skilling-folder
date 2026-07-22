@@ -1,0 +1,15 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #fafafa; color: #333; }
+main { min-height: calc(100vh - 56px); }
+.global-spinner {
+  position: fixed;
+  top: 56px;
+  left: 0;
+  right: 0;
+  background: #3f51b5;
+  color: white;
+  text-align: center;
+  padding: 6px;
+  font-size: 0.9rem;
+  z-index: 999;
+}

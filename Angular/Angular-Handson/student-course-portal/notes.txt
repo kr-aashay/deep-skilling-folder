@@ -1,0 +1,35 @@
+===== HANDS-ON 1: Angular Project Structure Notes =====
+
+angular.json
+  - Workspace configuration file that defines build, serve, and test options for the project including assets, styles, scripts, and budget thresholds.
+
+tsconfig.json
+  - Root TypeScript configuration that sets compiler options (target, module, strict mode) inherited by all sub-configurations in the workspace.
+
+tsconfig.app.json
+  - Application-specific TypeScript config that extends tsconfig.json and specifies which files to include when compiling the application source code.
+
+package.json
+  - Lists all npm dependencies, devDependencies, and npm scripts (ng serve, ng build, ng test) required to run and build the Angular project.
+
+src/main.ts
+  - The application entry point; bootstraps the root AppModule (or root component in standalone mode) to start the Angular application in the browser.
+
+src/app/app-module.ts
+  - The root NgModule that declares all components, imports required Angular modules (BrowserModule, RouterModule), and bootstraps the App root component.
+
+src/app/app.ts
+  - The root component of the application; hosts the router outlet so all page components are rendered within it based on the current route.
+
+src/index.html
+  - The single HTML page served to the browser; contains <app-root> where Angular mounts the application, and links to compiled CSS/JS bundles.
+
+===== angular.json budgets (architect > build > configurations > production) =====
+  maximumWarning  - The bundle size threshold above which the CLI shows a WARNING during ng build (e.g. 500kB). Acts as an early alert.
+  maximumError    - The bundle size threshold above which the CLI throws an ERROR and fails the build (e.g. 1MB). Enforces strict size limits.
+
+===== ng build dist/ folder =====
+  main.js         - Contains the compiled application code (your components, services, modules transpiled from TypeScript to JavaScript).
+  polyfills.js    - Browser compatibility polyfills for older browsers.
+  styles.css      - Compiled global styles.
+  index.html      - Entry HTML referencing the compiled bundles.

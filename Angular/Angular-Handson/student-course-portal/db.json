@@ -1,0 +1,17 @@
+{
+  "courses": [
+    { "id": 1, "name": "Data Structures",   "code": "CS101", "credits": 4, "gradeStatus": "passed",  "enrolled": true  },
+    { "id": 2, "name": "Algorithms",         "code": "CS102", "credits": 4, "gradeStatus": "pending", "enrolled": false },
+    { "id": 3, "name": "Web Development",    "code": "WD201", "credits": 3, "gradeStatus": "passed",  "enrolled": true  },
+    { "id": 4, "name": "Database Systems",   "code": "DB301", "credits": 3, "gradeStatus": "failed",  "enrolled": false },
+    { "id": 5, "name": "Operating Systems",  "code": "OS401", "credits": 4, "gradeStatus": "pending", "enrolled": false }
+  ],
+  "students": [
+    { "id": 1, "name": "John Doe",  "email": "john.doe@university.edu", "gpa": 3.8 },
+    { "id": 2, "name": "Jane Smith","email": "jane.smith@university.edu","gpa": 3.5 }
+  ],
+  "enrollments": [
+    { "id": 1, "studentId": 1, "courseId": 1 },
+    { "id": 2, "studentId": 1, "courseId": 3 }
+  ]
+}

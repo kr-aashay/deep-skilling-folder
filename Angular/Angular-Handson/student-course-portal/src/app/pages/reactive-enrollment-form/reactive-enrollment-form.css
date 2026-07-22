@@ -1,0 +1,14 @@
+.form-container { max-width: 500px; margin: 40px auto; padding: 0 20px; }
+.form-group { margin-bottom: 20px; display: flex; flex-direction: column; gap: 4px; }
+.form-control { padding: 8px 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; }
+.form-control.ng-invalid.ng-touched { border-color: red; }
+.form-control.ng-valid.ng-touched  { border-color: green; }
+.error-messages { color: red; font-size: 0.85rem; }
+.pending-msg { color: #666; font-size: 0.85rem; font-style: italic; }
+.array-item { display: flex; gap: 8px; margin-bottom: 8px; }
+.btn-primary { background: #3f51b5; color: white; border: none; padding: 10px 24px; border-radius: 4px; cursor: pointer; }
+.btn-primary:disabled { background: #ccc; cursor: not-allowed; }
+.btn-secondary { background: transparent; border: 1px solid #3f51b5; color: #3f51b5; padding: 8px 16px; border-radius: 4px; cursor: pointer; }
+.btn-remove { background: #ef5350; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; }
+.form-actions { margin-top: 20px; }
+.checkbox-group { flex-direction: row; align-items: center; gap: 8px; }

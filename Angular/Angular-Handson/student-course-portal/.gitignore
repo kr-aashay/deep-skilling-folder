@@ -1,0 +1,16 @@
+# Node modules — never commit these
+node_modules/
+
+# Build output
+dist/
+.angular/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+
+# Test coverage
+coverage/
