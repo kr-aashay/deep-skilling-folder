@@ -32,4 +32,3 @@ git status
 # Expected: Your branch is up to date with 'origin/master'.
 
 git log --oneline --graph --decorate
-# Expected: HEAD -> master and origin/master point to same commit
